@@ -1,4 +1,5 @@
 //CHECK IF PRIME
+function checkIfPrime(item) {
   if (item === 2) {
     return true;
   }
