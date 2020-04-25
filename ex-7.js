@@ -2,16 +2,20 @@
 What is the 10 001st prime number? */
 
 //CHECK IF PRIME FUNCTION
-function checkIfPrime(n) {
-  tempArray = [];
-  var i;
-  for (i = 0; i <= n; i++) {
-    if (n % i == 0) {
-      tempArray.push(i);
+function checkIfPrime(item) {
+  if (item === 2) {
+    return true;
+  }
+  if (item === 1 || item % 2 === 0) {
+    return false;
+  }
+  var ceil = Math.ceil(Math.sqrt(item));
+  for (var i = 3; i <= ceil; i += 2) {
+    if (item % i === 0) {
+      return false;
     }
   }
-  if (tempArray.length <= 2) return true;
-  return false;
+  return true;
 }
 
 primeNumbers = [];
